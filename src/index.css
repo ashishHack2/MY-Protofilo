@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0D1117] text-[#E6EDF3];
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-[#231942]/40 backdrop-blur-md border border-[#9F86C0]/20 shadow-xl;
+  }
+  
+  .glass-nav {
+    @apply bg-[#0D1117]/70 backdrop-blur-lg border-b border-[#9F86C0]/10;
+  }
+
+  .glow-teal {
+    box-shadow: 0 0 20px -5px theme('colors.teal.400'), inset 0 0 10px -5px theme('colors.teal.400');
+  }
+
+  .glow-teal-text {
+    text-shadow: 0 0 15px theme('colors.teal.400');
+  }
+
+  .glow-violet {
+    box-shadow: 0 0 25px -5px theme('colors.violet.500');
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-[#0A0E14];
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#5E548E]/50 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#2A9D8F]/70;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
