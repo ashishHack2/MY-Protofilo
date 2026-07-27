@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import photoImg from '../assets/photo.jpeg';
 
 const stats = [
   { label: 'Projects Built', value: '3+' },
@@ -44,7 +45,7 @@ export default function About() {
                 <div className="w-full h-full bg-[#1A202C] rounded-xl flex items-center justify-center overflow-hidden">
                   {/* Placeholder for Photo */}
                   <div className="text-brand-teal font-display text-4xl font-bold opacity-50">AB</div>
-                  <img src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?auto=format&fit=crop&q=80&w=800" alt="Profile" className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" />
+                  <img src={photoImg} alt="Profile" className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" />
                 </div>
               </div>
             </div>
