@@ -11,22 +11,22 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 relative bg-slate-50/50 dark:bg-transparent transition-colors duration-300">
-      <div className="container mx-auto px-6 max-w-5xl">
+    <section id="about" className="py-16 sm:py-24 relative bg-slate-50/50 dark:bg-transparent transition-colors duration-300">
+      <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white transition-colors">About Me</h2>
-            <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-teal/50 to-transparent ml-4"></div>
+          <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white transition-colors">About Me</h2>
+            <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-teal/50 to-transparent ml-2 sm:ml-4"></div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-12 items-center">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
             <div className="md:col-span-2">
-              <div className="space-y-6 text-slate-600 dark:text-brand-text text-lg leading-relaxed transition-colors">
+              <div className="space-y-4 sm:space-y-6 text-slate-600 dark:text-brand-text text-base sm:text-lg leading-relaxed transition-colors">
                 <p>
                   I'm a BCA student at Savitribai Phule Pune University with hands-on experience across multiple AI and software development internships. My journey started with a fascination for networking and cybersecurity, which evolved into a deep interest in AI/ML engineering and backend systems.
                 </p>
@@ -41,7 +41,7 @@ export default function About() {
             
             {/* Photo card */}
             <motion.div
-              className="relative group mx-auto md:mx-0 w-60 h-60 md:w-full md:h-80"
+              className="relative group mx-auto md:mx-0 w-48 h-48 sm:w-60 sm:h-60 md:w-full md:h-80 max-w-full"
               whileHover={{ scale: 1.03, y: -4 }}
               transition={{ type: 'spring', stiffness: 200, damping: 20 }}
             >
@@ -68,17 +68,17 @@ export default function About() {
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Gradient overlay at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/80 to-transparent flex items-end px-4 pb-3">
+                <div className="absolute bottom-0 left-0 right-0 h-14 sm:h-16 bg-gradient-to-t from-black/80 to-transparent flex items-end px-3 sm:px-4 pb-2.5 sm:pb-3">
                   <div>
-                    <p className="font-display font-semibold text-white text-sm">Ashish Bendale</p>
-                    <p className="font-mono text-[10px] text-teal-300 tracking-widest uppercase">Backend · AI/ML</p>
+                    <p className="font-display font-semibold text-white text-xs sm:text-sm">Ashish Bendale</p>
+                    <p className="font-mono text-[9px] sm:text-[10px] text-teal-300 tracking-widest uppercase">Backend · AI/ML</p>
                   </div>
                 </div>
               </div>
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-12 sm:mt-16">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -86,12 +86,12 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card p-6 rounded-2xl text-center group hover:-translate-y-1 transition-all duration-300 hover:border-brand-teal/50"
+                className="glass-card p-4 sm:p-6 rounded-xl sm:rounded-2xl text-center group hover:-translate-y-1 transition-all duration-300 hover:border-brand-teal/50"
               >
-                <div className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-teal transition-colors">
+                <div className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-1 sm:mb-2 group-hover:text-brand-teal transition-colors">
                   {stat.value}
                 </div>
-                <div className="text-sm font-mono text-slate-500 dark:text-brand-muted uppercase tracking-wider">
+                <div className="text-xs sm:text-sm font-mono text-slate-500 dark:text-brand-muted uppercase tracking-wider">
                   {stat.label}
                 </div>
               </motion.div>

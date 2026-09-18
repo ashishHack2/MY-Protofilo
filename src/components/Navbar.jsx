@@ -38,7 +38,7 @@ export default function Navbar() {
           : 'bg-transparent py-5'
       )}
     >
-      <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl flex items-center justify-between">
         <Link
           to="hero"
           smooth={true}
@@ -98,7 +98,7 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Nav Right (Theme Toggle + Hamburger) */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="md:hidden flex items-center gap-2 sm:gap-3">
           <ThemeToggle showLabel={false} />
           <button
             className={`p-2 rounded-lg transition-colors ${
@@ -120,11 +120,11 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', bounce: 0, duration: 0.4 }}
-            className={`fixed inset-0 z-[60] backdrop-blur-2xl flex flex-col md:hidden ${
-              !isDark ? 'bg-white/95 text-slate-800' : 'bg-[#0D1117]/95 text-brand-text'
+            className={`fixed inset-0 z-[100] backdrop-blur-2xl flex flex-col md:hidden overflow-y-auto h-[100dvh] ${
+              !isDark ? 'bg-white/98 text-slate-800' : 'bg-[#0D1117]/98 text-brand-text'
             }`}
           >
-            <div className={`flex items-center justify-between p-6 border-b ${
+            <div className={`flex items-center justify-between p-5 sm:p-6 border-b shrink-0 ${
               !isDark ? 'border-slate-200' : 'border-white/10'
             }`}>
               <span className={`text-2xl font-display font-bold ${
@@ -133,7 +133,7 @@ export default function Navbar() {
                 AB<span className="text-brand-teal">.</span>
               </span>
               <button
-                className={`p-2 ${!isDark ? 'text-slate-800 hover:text-brand-teal' : 'text-brand-text hover:text-white'}`}
+                className={`p-2 rounded-lg ${!isDark ? 'text-slate-800 hover:text-brand-teal' : 'text-brand-text hover:text-white'}`}
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="Close navigation menu"
               >
@@ -141,7 +141,7 @@ export default function Navbar() {
               </button>
             </div>
 
-            <div className="flex flex-col items-center gap-7 mt-10 px-6">
+            <div className="flex flex-col items-center gap-6 my-auto py-8 px-6 w-full max-w-sm mx-auto">
               <ThemeToggle showLabel={true} />
 
               {navLinks.map((link) => (

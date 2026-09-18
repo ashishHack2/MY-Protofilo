@@ -39,7 +39,7 @@ export default function Hero() {
 
       {/* Main hero content container */}
       <motion.div
-        className="relative z-10 container mx-auto px-6 max-w-7xl w-full py-16"
+        className="relative z-10 container mx-auto px-4 sm:px-6 max-w-7xl w-full py-12 sm:py-16"
         style={{ y: contentY, opacity: contentOpacity }}
       >
         {isDark ? (
@@ -50,41 +50,41 @@ export default function Hero() {
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-center text-center max-w-4xl mx-auto pt-6"
+            className="flex flex-col items-center text-center max-w-4xl mx-auto pt-2 sm:pt-6"
           >
             {/* Greeting */}
             <motion.span
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-mono text-teal-300 font-bold mb-4 block tracking-widest text-lg drop-shadow-[0_0_12px_rgba(45,212,191,0.6)] uppercase"
+              className="font-mono text-teal-300 font-bold mb-3 sm:mb-4 block tracking-widest text-sm sm:text-lg drop-shadow-[0_0_12px_rgba(45,212,191,0.6)] uppercase"
             >
               Hi, my name is
             </motion.span>
 
             {/* High-Contrast Large Name */}
-            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-[1.05] mb-6 drop-shadow-[0_5px_30px_rgba(0,0,0,0.95)]">
+            <h1 className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tight leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_5px_30px_rgba(0,0,0,0.95)] break-words w-full">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-white to-purple-300">
                 Ashish Bendale.
               </span>
             </h1>
 
             {/* Rotating Title */}
-            <div className="h-12 sm:h-16 mb-8 overflow-hidden flex items-center justify-center">
+            <div className="h-10 sm:h-16 mb-6 sm:mb-8 overflow-hidden flex items-center justify-center w-full">
               <motion.h2
                 key={titleIndex}
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -24 }}
                 transition={{ duration: 0.35, ease: 'easeOut' }}
-                className="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]"
+                className="font-display text-xl sm:text-3xl md:text-5xl font-bold text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]"
               >
-                I'm a <span className="text-teal-300 underline decoration-teal-400/60 underline-offset-8 drop-shadow-[0_0_20px_rgba(45,212,191,0.5)]">{titles[titleIndex]}</span>.
+                I'm a <span className="text-teal-300 underline decoration-teal-400/60 underline-offset-4 sm:underline-offset-8 drop-shadow-[0_0_20px_rgba(45,212,191,0.5)]">{titles[titleIndex]}</span>.
               </motion.h2>
             </div>
 
             {/* High-Contrast Glass Description Box */}
-            <p className="text-white text-base sm:text-lg md:text-xl max-w-2xl mb-10 leading-relaxed bg-[#0B0F17]/85 backdrop-blur-xl px-8 py-5 rounded-3xl border border-white/25 shadow-[0_12px_45px_rgba(0,0,0,0.8)] drop-shadow-md">
+            <p className="text-white text-sm sm:text-base md:text-xl max-w-2xl mb-8 sm:mb-10 leading-relaxed bg-[#0B0F17]/85 backdrop-blur-xl px-5 py-4 sm:px-8 sm:py-5 rounded-2xl sm:rounded-3xl border border-white/25 shadow-[0_12px_45px_rgba(0,0,0,0.8)] drop-shadow-md">
               BCA student at Savitribai Phule Pune University. Building robust backend systems
               and intelligent AI/ML solutions using <span className="text-teal-300 font-semibold">Python</span>, <span className="text-teal-300 font-semibold">Node.js</span>, <span className="text-teal-300 font-semibold">Django</span>, and REST APIs.
             </p>
@@ -94,14 +94,14 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center gap-5 sm:gap-6 mb-12 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mb-10 sm:mb-12 w-full sm:w-auto"
             >
               <Link
                 to="projects"
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="w-full sm:w-auto px-10 py-4 rounded-full bg-brand-teal text-[#0D1117] font-black text-lg hover:bg-teal-300 transition-all glow-teal cursor-pointer text-center shadow-[0_0_35px_rgba(42,157,143,0.7)] hover:shadow-[0_0_45px_rgba(42,157,143,0.9)] hover:scale-105"
+                className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-brand-teal text-[#0D1117] font-black text-base sm:text-lg hover:bg-teal-300 transition-all glow-teal cursor-pointer text-center shadow-[0_0_35px_rgba(42,157,143,0.7)] hover:shadow-[0_0_45px_rgba(42,157,143,0.9)] hover:scale-105"
               >
                 View Projects
               </Link>
@@ -110,7 +110,7 @@ export default function Hero() {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="w-full sm:w-auto px-10 py-4 rounded-full bg-white/15 hover:bg-white/25 border-2 border-white/40 text-white font-bold text-lg backdrop-blur-md transition-all cursor-pointer text-center shadow-lg hover:scale-105"
+                className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-white/15 hover:bg-white/25 border-2 border-white/40 text-white font-bold text-base sm:text-lg backdrop-blur-md transition-all cursor-pointer text-center shadow-lg hover:scale-105"
               >
                 Get In Touch
               </Link>
@@ -121,32 +121,32 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex items-center gap-5"
+              className="flex items-center gap-4 sm:gap-5"
             >
               <a
                 href="https://github.com/ashishHack2"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub Profile"
-                className="p-3.5 rounded-full bg-white/15 hover:bg-brand-teal hover:text-slate-950 text-white border border-white/30 transition-all shadow-md hover:-translate-y-1"
+                className="p-3 sm:p-3.5 rounded-full bg-white/15 hover:bg-brand-teal hover:text-slate-950 text-white border border-white/30 transition-all shadow-md hover:-translate-y-1"
               >
-                <Github size={22} />
+                <Github size={20} />
               </a>
               <a
                 href="https://www.linkedin.com/in/aashish-bendale-46b39825b/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn Profile"
-                className="p-3.5 rounded-full bg-white/15 hover:bg-brand-teal hover:text-slate-950 text-white border border-white/30 transition-all shadow-md hover:-translate-y-1"
+                className="p-3 sm:p-3.5 rounded-full bg-white/15 hover:bg-brand-teal hover:text-slate-950 text-white border border-white/30 transition-all shadow-md hover:-translate-y-1"
               >
-                <Linkedin size={22} />
+                <Linkedin size={20} />
               </a>
               <a
                 href="mailto:ashishbendale3@gmail.com"
                 aria-label="Send Email"
-                className="p-3.5 rounded-full bg-white/15 hover:bg-brand-teal hover:text-slate-950 text-white border border-white/30 transition-all shadow-md hover:-translate-y-1"
+                className="p-3 sm:p-3.5 rounded-full bg-white/15 hover:bg-brand-teal hover:text-slate-950 text-white border border-white/30 transition-all shadow-md hover:-translate-y-1"
               >
-                <Mail size={22} />
+                <Mail size={20} />
               </a>
             </motion.div>
           </motion.div>
@@ -154,7 +154,7 @@ export default function Hero() {
           /* ═══════════════════════════════════════════════════════════════════════════
              WHITE THEME: PURE WHITE CANVAS WITH ANIMATED HOODIE DEVELOPER AVATAR
              ═══════════════════════════════════════════════════════════════════════════ */
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-8 items-center">
             {/* Left Column: Text, Titles, CTAs, Socials */}
             <motion.div
               initial={{ opacity: 0, y: 35 }}
@@ -167,32 +167,32 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -15 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="font-mono text-teal-700 mb-3 block tracking-wider text-base sm:text-lg font-bold"
+                className="font-mono text-teal-700 mb-2 sm:mb-3 block tracking-wider text-sm sm:text-lg font-bold"
               >
                 Hi, my name is
               </motion.span>
 
               {/* Name */}
-              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-black tracking-tight leading-[1.08] mb-4 text-slate-950">
+              <h1 className="font-display text-4xl sm:text-6xl md:text-7xl xl:text-8xl font-black tracking-tight leading-[1.08] mb-3 sm:mb-4 text-slate-950 break-words w-full">
                 Ashish Bendale<span className="text-brand-teal">.</span>
               </h1>
 
               {/* Rotating Title */}
-              <div className="h-10 sm:h-14 mb-6 overflow-hidden flex items-center justify-center lg:justify-start">
+              <div className="h-9 sm:h-14 mb-4 sm:mb-6 overflow-hidden flex items-center justify-center lg:justify-start w-full">
                 <motion.h2
                   key={titleIndex}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.35, ease: 'easeOut' }}
-                  className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-teal-700"
+                  className="font-display text-xl sm:text-3xl md:text-4xl font-bold text-teal-700"
                 >
                   I'm a {titles[titleIndex]}.
                 </motion.h2>
               </div>
 
               {/* Bio paragraph */}
-              <p className="text-base sm:text-lg max-w-xl mb-8 leading-relaxed px-6 py-4 rounded-2xl border bg-white/95 border-slate-200/90 text-slate-700 shadow-md">
+              <p className="text-sm sm:text-base md:text-lg max-w-xl mb-6 sm:mb-8 leading-relaxed px-4 py-3.5 sm:px-6 sm:py-4 rounded-2xl border bg-white/95 border-slate-200/90 text-slate-700 shadow-md">
                 BCA student at Savitribai Phule Pune University. Building robust backend systems
                 and intelligent AI/ML solutions using <span className="text-teal-700 font-semibold">Python</span>, <span className="text-teal-700 font-semibold">Node.js</span>, <span className="text-teal-700 font-semibold">Django</span>, and REST APIs.
               </p>
@@ -202,14 +202,14 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 mb-10 w-full sm:w-auto"
+                className="flex flex-col sm:flex-row items-center gap-3.5 sm:gap-5 mb-8 sm:mb-10 w-full sm:w-auto"
               >
                 <Link
                   to="projects"
                   smooth={true}
                   duration={500}
                   offset={-80}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-teal text-white font-bold text-base hover:bg-teal-600 transition-all glow-teal cursor-pointer text-center shadow-lg shadow-teal-500/20"
+                  className="w-full sm:w-auto px-7 sm:px-8 py-3 sm:py-3.5 rounded-full bg-brand-teal text-white font-bold text-base hover:bg-teal-600 transition-all glow-teal cursor-pointer text-center shadow-lg shadow-teal-500/20"
                 >
                   View Projects
                 </Link>
@@ -218,7 +218,7 @@ export default function Hero() {
                   smooth={true}
                   duration={500}
                   offset={-80}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-full font-semibold text-base transition-all cursor-pointer text-center border bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-800"
+                  className="w-full sm:w-auto px-7 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-base transition-all cursor-pointer text-center border bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-800"
                 >
                   Get In Touch
                 </Link>
@@ -229,32 +229,32 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="flex items-center gap-4"
+                className="flex items-center gap-3.5 sm:gap-4"
               >
                 <a
                   href="https://github.com/ashishHack2"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub Profile"
-                  className="p-3 rounded-full border transition-all hover:text-brand-teal hover:-translate-y-1 bg-slate-100 border-slate-200 text-slate-700 hover:border-brand-teal/50 shadow-sm"
+                  className="p-2.5 sm:p-3 rounded-full border transition-all hover:text-brand-teal hover:-translate-y-1 bg-slate-100 border-slate-200 text-slate-700 hover:border-brand-teal/50 shadow-sm"
                 >
-                  <Github size={20} />
+                  <Github size={18} />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/aashish-bendale-46b39825b/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn Profile"
-                  className="p-3 rounded-full border transition-all hover:text-brand-teal hover:-translate-y-1 bg-slate-100 border-slate-200 text-slate-700 hover:border-brand-teal/50 shadow-sm"
+                  className="p-2.5 sm:p-3 rounded-full border transition-all hover:text-brand-teal hover:-translate-y-1 bg-slate-100 border-slate-200 text-slate-700 hover:border-brand-teal/50 shadow-sm"
                 >
-                  <Linkedin size={20} />
+                  <Linkedin size={18} />
                 </a>
                 <a
                   href="mailto:ashishbendale3@gmail.com"
                   aria-label="Send Email"
-                  className="p-3 rounded-full border transition-all hover:text-brand-teal hover:-translate-y-1 bg-slate-100 border-slate-200 text-slate-700 hover:border-brand-teal/50 shadow-sm"
+                  className="p-2.5 sm:p-3 rounded-full border transition-all hover:text-brand-teal hover:-translate-y-1 bg-slate-100 border-slate-200 text-slate-700 hover:border-brand-teal/50 shadow-sm"
                 >
-                  <Mail size={20} />
+                  <Mail size={18} />
                 </a>
               </motion.div>
             </motion.div>
@@ -264,7 +264,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 flex items-center justify-center w-full"
+              className="lg:col-span-5 flex items-center justify-center w-full mt-4 lg:mt-0"
             >
               <HeroAvatar />
             </motion.div>

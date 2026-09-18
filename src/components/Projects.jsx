@@ -44,22 +44,22 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 relative transition-colors duration-300">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section id="projects" className="py-16 sm:py-24 relative transition-colors duration-300">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
-          <div className="flex items-center gap-4">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white transition-colors">Featured Projects</h2>
-            <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-teal/50 to-transparent ml-4"></div>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white transition-colors">Featured Projects</h2>
+            <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-teal/50 to-transparent ml-2 sm:ml-4"></div>
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, idx) => (
             <motion.div
               key={project.title}
@@ -67,26 +67,26 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="glass-card rounded-2xl p-8 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-brand-teal/40 hover:shadow-xl hover:shadow-teal-500/10"
+              className="glass-card rounded-2xl p-5 sm:p-8 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-brand-teal/40 hover:shadow-xl hover:shadow-teal-500/10"
             >
               {/* Background Glow on Hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
               <div className="relative z-10 flex flex-col h-full">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 rounded-xl bg-teal-50 dark:bg-brand-violet/20 text-brand-teal glow-teal-text">
-                    <Folder size={32} />
+                <div className="flex justify-between items-start mb-4 sm:mb-6">
+                  <div className="p-2.5 sm:p-3 rounded-xl bg-teal-50 dark:bg-brand-violet/20 text-brand-teal glow-teal-text">
+                    <Folder size={26} className="sm:w-8 sm:h-8" />
                   </div>
-                  <div className="flex gap-4 items-center">
+                  <div className="flex gap-3 sm:gap-4 items-center">
                     {project.github && (
                       <a 
                         href={project.github} 
                         target="_blank" 
                         rel="noreferrer" 
                         aria-label="View Github Repository"
-                        className="text-slate-400 hover:text-brand-teal dark:text-brand-muted dark:hover:text-brand-teal transition-colors"
+                        className="text-slate-400 hover:text-brand-teal dark:text-brand-muted dark:hover:text-brand-teal transition-colors p-1"
                       >
-                        <Github size={22} />
+                        <Github size={20} className="sm:w-[22px] sm:h-[22px]" />
                       </a>
                     )}
                     {project.demo && (
@@ -95,18 +95,18 @@ export default function Projects() {
                         target="_blank" 
                         rel="noreferrer" 
                         aria-label="Live Demo"
-                        className="text-slate-400 hover:text-brand-teal dark:text-brand-muted dark:hover:text-brand-teal transition-colors"
+                        className="text-slate-400 hover:text-brand-teal dark:text-brand-muted dark:hover:text-brand-teal transition-colors p-1"
                       >
-                        <ExternalLink size={22} />
+                        <ExternalLink size={20} className="sm:w-[22px] sm:h-[22px]" />
                       </a>
                     )}
                   </div>
                 </div>
 
-                <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-teal transition-colors">
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-teal transition-colors break-words">
                   {project.title}
                 </h3>
-                <p className="text-indigo-600 dark:text-brand-violetLight font-medium mb-4 text-sm">
+                <p className="text-indigo-600 dark:text-brand-violetLight font-medium mb-4 text-xs sm:text-sm">
                   {project.impact}
                 </p>
 

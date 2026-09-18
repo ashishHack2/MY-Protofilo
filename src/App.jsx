@@ -17,7 +17,7 @@ function AppContent() {
 
   return (
     <div
-      className={`min-h-screen font-sans transition-colors duration-300 selection:bg-brand-teal/30 ${
+      className={`min-h-screen w-full max-w-[100vw] overflow-x-hidden font-sans transition-colors duration-300 selection:bg-brand-teal/30 ${
         !isDark
           ? 'bg-[#FFFFFF] text-slate-800 selection:text-teal-900'
           : 'bg-[#0D1117] text-[#E6EDF3] selection:text-white'

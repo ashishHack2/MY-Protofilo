@@ -41,57 +41,57 @@ const experience = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 relative transition-colors duration-300">
-      <div className="container mx-auto px-6 max-w-4xl">
+    <section id="experience" className="py-16 sm:py-24 relative transition-colors duration-300">
+      <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
-          <div className="flex items-center gap-4">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white transition-colors">Experience</h2>
-            <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-teal/50 to-transparent ml-4"></div>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white transition-colors">Experience</h2>
+            <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-teal/50 to-transparent ml-2 sm:ml-4"></div>
           </div>
         </motion.div>
 
-        <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-brand-teal before:via-brand-violet/50 before:to-transparent">
+        <div className="space-y-8 sm:space-y-12 relative before:absolute before:inset-0 before:left-4 sm:before:left-5 md:before:left-1/2 before:-translate-x-1/2 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-brand-teal before:via-brand-violet/50 before:to-transparent">
           {experience.map((job, idx) => (
             <div key={job.company} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
               {/* Timeline dot */}
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white dark:border-[#0D1117] bg-brand-teal text-white dark:text-[#0D1117] absolute left-0 md:left-1/2 -translate-x-1/2 shrink-0 md:order-1 shadow-md z-10 transition-transform group-hover:scale-110">
-                <Briefcase size={18} />
+              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 sm:border-4 border-white dark:border-[#0D1117] bg-brand-teal text-white dark:text-[#0D1117] absolute left-4 sm:left-5 md:left-1/2 -translate-x-1/2 shrink-0 md:order-1 shadow-md z-10 transition-transform group-hover:scale-110">
+                <Briefcase size={15} className="sm:w-[18px] sm:h-[18px]" />
               </div>
 
               {/* Content card */}
               <motion.div 
-                initial={{ opacity: 0, x: idx % 2 === 0 ? 50 : -50, y: 20 }}
+                initial={{ opacity: 0, x: idx % 2 === 0 ? 30 : -30, y: 20 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6 }}
-                className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-card rounded-2xl p-6 md:p-8 ml-auto md:ml-0 hover:border-brand-teal/40 transition-colors"
+                className="w-[calc(100%-2.75rem)] sm:w-[calc(100%-3.5rem)] md:w-[calc(50%-3rem)] glass-card rounded-2xl p-4 sm:p-6 md:p-8 ml-auto md:ml-0 hover:border-brand-teal/40 transition-colors"
               >
-                <div className="flex flex-col mb-4">
-                  <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white group-hover:text-brand-teal transition-colors">{job.role}</h3>
-                  <div className="flex flex-wrap justify-between items-center mt-1 gap-2">
-                    <span className="text-indigo-600 dark:text-brand-violetLight font-medium text-base sm:text-lg">{job.company}</span>
-                    <span className="font-mono text-xs text-teal-700 dark:text-brand-teal bg-teal-50 dark:bg-brand-teal/10 px-3 py-1 rounded-full border border-teal-200 dark:border-brand-teal/30">{job.duration}</span>
+                <div className="flex flex-col mb-3 sm:mb-4">
+                  <h3 className="font-display text-lg sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-brand-teal transition-colors break-words">{job.role}</h3>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-1 gap-1.5 sm:gap-2">
+                    <span className="text-indigo-600 dark:text-brand-violetLight font-medium text-sm sm:text-base md:text-lg">{job.company}</span>
+                    <span className="font-mono text-[11px] sm:text-xs text-teal-700 dark:text-brand-teal bg-teal-50 dark:bg-brand-teal/10 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-teal-200 dark:border-brand-teal/30 self-start sm:self-auto">{job.duration}</span>
                   </div>
                 </div>
 
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                   {job.description.map((desc, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-brand-text/90 text-sm md:text-base leading-relaxed">
-                      <span className="text-brand-teal mt-1 shrink-0">▹</span>
+                    <li key={i} className="flex items-start gap-2 sm:gap-3 text-slate-600 dark:text-brand-text/90 text-xs sm:text-sm md:text-base leading-relaxed">
+                      <span className="text-brand-teal mt-0.5 sm:mt-1 shrink-0">▹</span>
                       <span>{desc}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {job.tech.map((t) => (
-                    <span key={t} className="font-mono text-xs text-slate-600 dark:text-brand-muted bg-slate-100 dark:bg-brand-bg px-2.5 py-1 rounded-md border border-slate-200 dark:border-brand-violet/20">
+                    <span key={t} className="font-mono text-[11px] sm:text-xs text-slate-600 dark:text-brand-muted bg-slate-100 dark:bg-brand-bg px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-slate-200 dark:border-brand-violet/20">
                       {t}
                     </span>
                   ))}

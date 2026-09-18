@@ -49,22 +49,22 @@ const itemVariants = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 relative bg-slate-50/50 dark:bg-brand-bg/50 transition-colors duration-300">
-      <div className="container mx-auto px-6 max-w-6xl">
+    <section id="skills" className="py-16 sm:py-24 relative bg-slate-50/50 dark:bg-brand-bg/50 transition-colors duration-300">
+      <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
-          <div className="flex items-center gap-4">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white transition-colors">Technical Skills</h2>
-            <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-teal/50 to-transparent ml-4"></div>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white transition-colors">Technical Skills</h2>
+            <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-teal/50 to-transparent ml-2 sm:ml-4"></div>
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {skillCategories.map((category, idx) => (
             <motion.div
               key={category.title}
@@ -72,9 +72,9 @@ export default function Skills() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="glass-card rounded-2xl p-6 border-t-2 border-t-brand-teal/40 hover:border-t-brand-teal transition-all duration-300"
+              className="glass-card rounded-2xl p-5 sm:p-6 border-t-2 border-t-brand-teal/40 hover:border-t-brand-teal transition-all duration-300"
             >
-              <h3 className="font-display text-xl font-semibold text-slate-900 dark:text-white mb-6 flex items-center gap-2 transition-colors">
+              <h3 className="font-display text-lg sm:text-xl font-semibold text-slate-900 dark:text-white mb-4 sm:mb-6 flex items-center gap-2 transition-colors">
                 <span className="w-2 h-2 rounded-full bg-brand-teal glow-teal"></span>
                 {category.title}
               </h3>
