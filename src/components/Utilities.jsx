@@ -45,12 +45,12 @@ export function CursorGlow() {
     <>
       {/* Soft large glow */}
       <motion.div
-        className="fixed top-0 left-0 w-96 h-96 bg-brand-teal/5 rounded-full pointer-events-none mix-blend-screen blur-[100px] z-50 transition-opacity duration-300"
+        className="fixed top-0 left-0 w-96 h-96 bg-brand-teal/10 dark:bg-brand-teal/5 rounded-full pointer-events-none blur-[100px] z-50 transition-opacity duration-300"
         animate={{
           x: mousePosition.x - 192,
           y: mousePosition.y - 192,
-          scale: isHovering ? 1.5 : 1,
-          opacity: isHovering ? 1 : 0.5
+          scale: isHovering ? 1.4 : 1,
+          opacity: isHovering ? 0.8 : 0.4
         }}
         transition={{ type: 'tween', ease: 'backOut', duration: 0.5 }}
       />

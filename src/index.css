@@ -4,26 +4,81 @@
 
 @layer base {
   body {
-    @apply bg-[#0D1117] text-[#E6EDF3];
+    transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
+  }
+
+  /* White Screen (Light) theme */
+  html:not(.dark) body,
+  html[data-theme="light"] body,
+  body.light {
+    background-color: #FFFFFF !important;
+    color: #1E293B !important;
+  }
+
+  /* Black Screen (Dark) theme */
+  html.dark body,
+  html[data-theme="dark"] body,
+  body.dark {
+    background-color: #0D1117 !important;
+    color: #E6EDF3 !important;
   }
 }
 
 @layer utilities {
   .glass-card {
-    @apply bg-[#231942]/40 backdrop-blur-md border border-[#9F86C0]/20 shadow-xl;
+    transition: all 0.3s ease;
   }
   
-  .glass-nav {
-    @apply bg-[#0D1117]/70 backdrop-blur-lg border-b border-[#9F86C0]/10;
+  /* White screen cards */
+  html:not(.dark) .glass-card,
+  html[data-theme="light"] .glass-card,
+  body.light .glass-card {
+    background-color: rgba(255, 255, 255, 0.96) !important;
+    border-color: rgba(226, 232, 240, 0.9) !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02) !important;
+  }
+
+  /* Black screen cards */
+  html.dark .glass-card,
+  html[data-theme="dark"] .glass-card,
+  body.dark .glass-card {
+    background-color: rgba(35, 25, 66, 0.4) !important;
+    border-color: rgba(159, 134, 192, 0.2) !important;
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  /* White screen nav */
+  html:not(.dark) .glass-nav,
+  html[data-theme="light"] .glass-nav,
+  body.light .glass-nav {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    border-bottom-color: rgba(226, 232, 240, 0.8) !important;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.03) !important;
+  }
+
+  /* Black screen nav */
+  html.dark .glass-nav,
+  html[data-theme="dark"] .glass-nav,
+  body.dark .glass-nav {
+    background-color: rgba(13, 17, 23, 0.75) !important;
+    border-bottom-color: rgba(159, 134, 192, 0.15) !important;
   }
 
   .glow-teal {
     box-shadow: 0 0 20px -5px theme('colors.teal.400'), inset 0 0 10px -5px theme('colors.teal.400');
   }
+  html:not(.dark) .glow-teal,
+  body.light .glow-teal {
+    box-shadow: 0 4px 14px 0 rgba(42, 157, 143, 0.25);
+  }
 
   .glow-teal-text {
     text-shadow: 0 0 15px theme('colors.teal.400');
+  }
+  html:not(.dark) .glow-teal-text,
+  body.light .glow-teal-text {
+    text-shadow: none;
   }
 
   .glow-violet {
@@ -35,13 +90,23 @@
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-[#0A0E14];
+    background-color: #0A0E14;
+  }
+  html:not(.dark) ::-webkit-scrollbar-track,
+  body.light ::-webkit-scrollbar-track {
+    background-color: #F1F5F9;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-[#5E548E]/50 rounded-full;
+    background-color: rgba(94, 84, 142, 0.5);
+    border-radius: 9999px;
+  }
+  html:not(.dark) ::-webkit-scrollbar-thumb,
+  body.light ::-webkit-scrollbar-thumb {
+    background-color: #CBD5E1;
+    border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-[#2A9D8F]/70;
+    background-color: rgba(42, 157, 143, 0.8);
   }
 }
 

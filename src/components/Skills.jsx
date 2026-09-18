@@ -49,7 +49,7 @@ const itemVariants = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 relative bg-brand-bg/50">
+    <section id="skills" className="py-24 relative bg-slate-50/50 dark:bg-brand-bg/50 transition-colors duration-300">
       <div className="container mx-auto px-6 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -59,7 +59,7 @@ export default function Skills() {
           className="mb-16"
         >
           <div className="flex items-center gap-4">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white">Technical Skills</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white transition-colors">Technical Skills</h2>
             <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-teal/50 to-transparent ml-4"></div>
           </div>
         </motion.div>
@@ -72,9 +72,9 @@ export default function Skills() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="glass-card rounded-2xl p-6 border-t-2 border-t-brand-teal/30 hover:border-t-brand-teal transition-all duration-300"
+              className="glass-card rounded-2xl p-6 border-t-2 border-t-brand-teal/40 hover:border-t-brand-teal transition-all duration-300"
             >
-              <h3 className="font-display text-xl font-semibold text-white mb-6 flex items-center gap-2">
+              <h3 className="font-display text-xl font-semibold text-slate-900 dark:text-white mb-6 flex items-center gap-2 transition-colors">
                 <span className="w-2 h-2 rounded-full bg-brand-teal glow-teal"></span>
                 {category.title}
               </h3>
@@ -84,13 +84,13 @@ export default function Skills() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="flex flex-wrap gap-3"
+                className="flex flex-wrap gap-2.5"
               >
                 {category.skills.map((skill) => (
                   <motion.span
                     key={skill}
                     variants={itemVariants}
-                    className="font-mono text-sm bg-brand-violet/20 text-brand-text px-3 py-1.5 rounded-lg border border-brand-violet/30 hover:bg-brand-teal/20 hover:border-brand-teal/50 hover:text-white transition-colors cursor-default"
+                    className="font-mono text-xs sm:text-sm bg-slate-100 dark:bg-brand-violet/20 text-slate-700 dark:text-brand-text px-3 py-1.5 rounded-lg border border-slate-200 dark:border-brand-violet/30 hover:bg-teal-50 dark:hover:bg-brand-teal/20 hover:border-brand-teal/50 hover:text-brand-teal dark:hover:text-white transition-colors cursor-default"
                   >
                     {skill}
                   </motion.span>

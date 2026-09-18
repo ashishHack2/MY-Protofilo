@@ -44,7 +44,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-24 relative transition-colors duration-300">
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -54,7 +54,7 @@ export default function Projects() {
           className="mb-16"
         >
           <div className="flex items-center gap-4">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white">Featured Projects</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white transition-colors">Featured Projects</h2>
             <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-teal/50 to-transparent ml-4"></div>
           </div>
         </motion.div>
@@ -67,51 +67,63 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="glass-card rounded-2xl p-8 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-brand-teal/40 hover:shadow-[0_0_30px_-5px_rgba(42,157,143,0.3)]"
+              className="glass-card rounded-2xl p-8 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-brand-teal/40 hover:shadow-xl hover:shadow-teal-500/10"
             >
               {/* Background Glow on Hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 rounded-xl bg-brand-violet/20 text-brand-teal glow-teal-text">
+                  <div className="p-3 rounded-xl bg-teal-50 dark:bg-brand-violet/20 text-brand-teal glow-teal-text">
                     <Folder size={32} />
                   </div>
                   <div className="flex gap-4 items-center">
                     {project.github && (
-                      <a href={project.github} target="_blank" rel="noreferrer" className="text-brand-muted hover:text-brand-teal transition-colors">
+                      <a 
+                        href={project.github} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        aria-label="View Github Repository"
+                        className="text-slate-400 hover:text-brand-teal dark:text-brand-muted dark:hover:text-brand-teal transition-colors"
+                      >
                         <Github size={22} />
                       </a>
                     )}
                     {project.demo && (
-                      <a href={project.demo} target="_blank" rel="noreferrer" className="text-brand-muted hover:text-brand-teal transition-colors">
+                      <a 
+                        href={project.demo} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        aria-label="Live Demo"
+                        className="text-slate-400 hover:text-brand-teal dark:text-brand-muted dark:hover:text-brand-teal transition-colors"
+                      >
                         <ExternalLink size={22} />
                       </a>
                     )}
                   </div>
                 </div>
 
-                <h3 className="font-display text-2xl font-bold text-white mb-2 group-hover:text-brand-teal transition-colors">
+                <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-teal transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-brand-violetLight font-medium mb-4 text-sm">
+                <p className="text-indigo-600 dark:text-brand-violetLight font-medium mb-4 text-sm">
                   {project.impact}
                 </p>
 
                 <div className="mb-6 flex-grow">
-                  <ul className="space-y-2 text-brand-text/90 text-sm">
+                  <ul className="space-y-2.5 text-slate-600 dark:text-brand-text/90 text-sm">
                     {project.description.map((desc, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-brand-teal mt-1">▹</span>
+                        <span className="text-brand-teal mt-0.5">▹</span>
                         <span>{desc}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-brand-violet/10">
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-200 dark:border-brand-violet/10">
                   {project.tech.map((t) => (
-                    <span key={t} className="font-mono text-xs text-brand-muted">
+                    <span key={t} className="font-mono text-xs text-slate-600 dark:text-brand-muted bg-slate-100 dark:bg-transparent px-2.5 py-1 rounded border border-slate-200 dark:border-transparent">
                       {t}
                     </span>
                   ))}
@@ -128,10 +140,10 @@ export default function Projects() {
           className="mt-16 text-center"
         >
           <a 
-            href="https://github.com" 
+            href="https://github.com/ashishHack2" 
             target="_blank" 
             rel="noreferrer"
-            className="inline-flex items-center gap-2 font-mono text-brand-teal hover:text-white transition-colors border-b border-brand-teal/30 hover:border-white pb-1 glow-teal-text"
+            className="inline-flex items-center gap-2 font-mono text-teal-600 dark:text-brand-teal hover:text-teal-700 dark:hover:text-white transition-colors border-b border-brand-teal/40 hover:border-brand-teal pb-1"
           >
             View All Projects on GitHub <ExternalLink size={16} />
           </a>
