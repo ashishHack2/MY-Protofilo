@@ -2,20 +2,24 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, GraduationCap, ExternalLink } from 'lucide-react';
 
-const education = {
-  degree: "Bachelor of Computer Applications (BCA)",
-  institution: "Savitribai Phule Pune University",
-  years: "2024 – 2027",
-  coursework: ["C", "C++", "Python Programming", "AI/ML Fundamentals", "Cybersecurity Fundamentals"]
-};
+const educationList = [
+  {
+    degree: "Bachelor of Computer Applications (BCA)",
+    institution: "Savitribai Phule Pune University",
+    years: "2024 – 2027 (Expected)",
+    score: "CGPA: 9.73",
+    coursework: ["C", "C++", "Python Programming", "AI/ML Fundamentals", "Cybersecurity Fundamentals"]
+  },
+  {
+    degree: "Higher Secondary Certificate (HSC)",
+    institution: "Maharashtra State Board",
+    years: "2022 – 2024",
+    score: "CGPA: 8.30",
+    coursework: ["Computer Science", "Information Technology"]
+  }
+];
 
 const certificates = [
-  {
-    name: "AI Engineer Certification",
-    issuer: "Industry Standard",
-    date: "2025",
-    link: "#"
-  },
   {
     name: "Defronix Certified Junior Security Practitioner",
     issuer: "Defronix Academy",
@@ -72,25 +76,38 @@ export default function Certificates() {
               <h3 className="font-display text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white transition-colors">Formal Education</h3>
             </div>
             
-            <div className="glass-card rounded-2xl p-5 sm:p-8 border-l-4 border-l-brand-teal">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
-                <h4 className="font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-white transition-colors break-words">{education.degree}</h4>
-                <span className="font-mono text-xs sm:text-sm text-teal-700 dark:text-brand-teal bg-teal-50 dark:bg-brand-teal/10 px-3 py-1 rounded-full border border-teal-200 dark:border-brand-teal/30 self-start">
-                  {education.years}
-                </span>
-              </div>
-              <p className="text-indigo-600 dark:text-brand-violetLight font-medium mb-4 sm:mb-6 text-sm sm:text-base">{education.institution}</p>
-              
-              <div>
-                <p className="text-slate-500 dark:text-brand-muted text-xs sm:text-sm uppercase tracking-wider font-semibold mb-2.5 sm:mb-3">Key Coursework</p>
-                <div className="flex flex-wrap gap-2">
-                  {education.coursework.map(course => (
-                    <span key={course} className="text-xs sm:text-sm bg-slate-100 dark:bg-brand-card text-slate-700 dark:text-brand-text px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-slate-200 dark:border-brand-violet/20">
-                      {course}
-                    </span>
-                  ))}
+            <div className="space-y-4 sm:space-y-6">
+              {educationList.map((edu) => (
+                <div key={edu.degree} className="glass-card rounded-2xl p-5 sm:p-7 border-l-4 border-l-brand-teal">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+                    <div>
+                      <h4 className="font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-white transition-colors break-words">{edu.degree}</h4>
+                      <p className="text-indigo-600 dark:text-brand-violetLight font-medium text-sm sm:text-base mt-0.5">{edu.institution}</p>
+                    </div>
+                    <div className="flex flex-col sm:items-end gap-1 shrink-0">
+                      <span className="font-mono text-xs text-teal-700 dark:text-brand-teal bg-teal-50 dark:bg-brand-teal/10 px-3 py-1 rounded-full border border-teal-200 dark:border-brand-teal/30 self-start sm:self-auto">
+                        {edu.years}
+                      </span>
+                      <span className="font-mono text-xs font-semibold text-slate-600 dark:text-brand-muted">
+                        {edu.score}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {edu.coursework && (
+                    <div className="mt-3">
+                      <p className="text-slate-500 dark:text-brand-muted text-[11px] sm:text-xs uppercase tracking-wider font-semibold mb-2">Key Coursework</p>
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                        {edu.coursework.map(course => (
+                          <span key={course} className="text-xs bg-slate-100 dark:bg-brand-card text-slate-700 dark:text-brand-text px-2.5 py-1 rounded-lg border border-slate-200 dark:border-brand-violet/20">
+                            {course}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
+              ))}
             </div>
           </motion.div>
 

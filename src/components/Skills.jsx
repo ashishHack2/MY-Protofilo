@@ -24,7 +24,7 @@ const skillCategories = [
   },
   {
     title: "Other Concepts",
-    skills: ["Cybersecurity Fundamentals", "Networking Protocols (TCP/IP, DNS, HTTP)", "Problem-Solving", "Team Collaboration"]
+    skills: ["Cybersecurity Fundamentals", "Networking Protocols (TCP/IP, DNS, HTTP)", "Problem-Solving", "Team Collaboration", "Leadership"]
   }
 ];
 

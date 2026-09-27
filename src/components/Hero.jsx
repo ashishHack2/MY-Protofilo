@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { Mail, ArrowDown } from 'lucide-react';
+import { Mail, ArrowDown, Download } from 'lucide-react';
 import { Github, Linkedin } from './Icons';
 import VideoBackground from './VideoBackground';
 import HeroAvatar from './HeroAvatar';
@@ -105,6 +105,16 @@ export default function Hero() {
               >
                 View Projects
               </Link>
+              <a
+                href="/Ashish%20Bendale.pdf"
+                download="Ashish_Bendale_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-brand-teal/20 hover:bg-brand-teal/30 border-2 border-brand-teal text-white font-bold text-base sm:text-lg backdrop-blur-md transition-all cursor-pointer text-center shadow-lg hover:scale-105 flex items-center justify-center gap-2"
+              >
+                <Download size={20} className="text-teal-300" />
+                Resume
+              </a>
               <Link
                 to="contact"
                 smooth={true}

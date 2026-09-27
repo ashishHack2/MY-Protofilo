@@ -89,8 +89,10 @@ export default function Navbar() {
           <ThemeToggle />
 
           <a
-            href="/resume.pdf"
-            download
+            href="/Ashish%20Bendale.pdf"
+            download="Ashish_Bendale_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-5 py-2 rounded-full bg-brand-teal text-white font-medium text-sm hover:bg-teal-600 transition-all glow-teal cursor-pointer shadow-sm"
           >
             Resume
@@ -172,8 +174,10 @@ export default function Navbar() {
                 Contact
               </Link>
               <a
-                href="/resume.pdf"
-                download
+                href="/Ashish%20Bendale.pdf"
+                download="Ashish_Bendale_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-4 px-8 py-3 rounded-full bg-brand-teal text-white font-medium text-base glow-teal w-full text-center"
               >
                 Download Resume

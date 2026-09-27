@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Download } from 'lucide-react';
 import photoImg from '../assets/photo.jpeg';
 
 const stats = [
@@ -36,6 +37,18 @@ export default function About() {
                 <p>
                   I'm currently seeking a Backend Engineering or AI/ML role where I can apply my expertise in machine learning fundamentals, API design, networking protocols, and team collaboration to production-grade systems.
                 </p>
+                <div className="pt-2">
+                  <a
+                    href="/Ashish%20Bendale.pdf"
+                    download="Ashish_Bendale_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-brand-teal text-white font-medium text-sm hover:bg-teal-600 transition-all glow-teal cursor-pointer shadow-md hover:scale-105"
+                  >
+                    <Download size={17} />
+                    Download Resume
+                  </a>
+                </div>
               </div>
             </div>
             

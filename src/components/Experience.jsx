@@ -10,7 +10,8 @@ const experience = [
     description: [
       "Gained hands-on exposure to multiple operating systems, including Windows and Linux, through practical lab-based exercises.",
       "Studied and applied core networking protocols (TCP/IP, DNS, HTTP/HTTPS) to understand common network attack surfaces.",
-      "Worked with industry-standard cybersecurity and network monitoring tools to identify basic vulnerabilities."
+      "Worked with industry-standard cybersecurity and network monitoring tools to identify basic vulnerabilities.",
+      "Built foundational knowledge of system and network security relevant to securing backend infrastructure."
     ],
     tech: ["Cybersecurity", "TCP/IP", "DNS", "Linux", "Windows"]
   },

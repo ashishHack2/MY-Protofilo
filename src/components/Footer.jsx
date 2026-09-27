@@ -25,6 +25,15 @@ export default function Footer() {
           <Link to="certificates" smooth={true} duration={500} offset={-80} className="text-slate-600 dark:text-brand-muted hover:text-brand-teal transition-colors cursor-pointer">Certificates</Link>
           <Link to="experience" smooth={true} duration={500} offset={-80} className="text-slate-600 dark:text-brand-muted hover:text-brand-teal transition-colors cursor-pointer">Experience</Link>
           <Link to="contact" smooth={true} duration={500} offset={-80} className="text-slate-600 dark:text-brand-muted hover:text-brand-teal transition-colors cursor-pointer">Contact</Link>
+          <a
+            href="/Ashish%20Bendale.pdf"
+            download="Ashish_Bendale_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-600 dark:text-brand-teal hover:underline transition-colors font-semibold cursor-pointer"
+          >
+            Resume (CV)
+          </a>
         </div>
 
         <div className="flex gap-4 sm:gap-5 mb-6 sm:mb-8">
